@@ -95,19 +95,19 @@
             }
         },
         {
-            "Key": "42ddc4dd-7a4f-469a-a476-b7e8ec0f0c50",
-            "Value": {
-                "id": "80c26854-8fe4-4da8-a25f-ffb24949ce47",
-                "resourcePath": "sprites\\spri_runLeft\\spri_runLeft.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "4837b384-b4ea-42b9-9779-07ba2c613b30",
             "Value": {
                 "id": "13424c50-0702-41c1-b732-d842a0276d7e",
                 "resourcePath": "views\\4837b384-b4ea-42b9-9779-07ba2c613b30.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "568c6d2b-b390-4e29-886d-966ef7cfd738",
+            "Value": {
+                "id": "3a64e5ec-ac1d-4d57-8b49-8a08c8bed9bd",
+                "resourcePath": "sprites\\spr_gravityGun\\spr_gravityGun.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

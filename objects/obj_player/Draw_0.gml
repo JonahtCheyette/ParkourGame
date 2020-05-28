@@ -37,6 +37,8 @@ if(noone == collision_line(x, y, x + dcos(pointerDir) * 1000, y + dsin(pointerDi
 	draw_line_width(x, y, pointerX, pointerY,3);
 	draw_set_alpha(1);
 	//terribleness to draw the pointer
+	//essentially gets teh cuts of each wall the circle intersects, then draws a circle per each
+	//the idea itself ain't bad, but the math is horrendous
 	if(!(pointerX <= camera_get_view_x(view_camera[0]) || pointerX >= camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0]) || pointerY <= camera_get_view_y(view_camera[0]) || pointerY >= camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0]))){
 		var _list = ds_list_create();
 		var _num = collision_circle_list(pointerX, pointerY, 99*0.5/circleScale, obj_ground, false, true, _list, false);
@@ -55,4 +57,8 @@ if(noone == collision_line(x, y, x + dcos(pointerDir) * 1000, y + dsin(pointerDi
 	}
 }
 
+//draw myself
 draw_self();
+
+//draw gravity gun
+draw_sprite_ext(spr_gravityGun, 0, x, y, 1, 1, -pointerDir, c_white, 1);
