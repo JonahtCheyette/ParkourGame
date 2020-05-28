@@ -111,6 +111,14 @@
             }
         },
         {
+            "Key": "5972f52e-78b0-4412-88a1-ce8355d8b89c",
+            "Value": {
+                "id": "d1a1950b-16b8-49af-a8c5-d70ff11974d2",
+                "resourcePath": "sprites\\spr_laserPointer\\spr_laserPointer.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "5be4d30c-4bea-4aa2-bbdf-a07b2006596c",
             "Value": {
                 "id": "b099c9a5-fef8-452d-9915-e6e23e5653d1",
