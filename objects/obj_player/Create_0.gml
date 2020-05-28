@@ -1,11 +1,12 @@
 /// @description Initialize Variables
+//controls
 xaxis = 0;
 yaxis = 0;
+spd = 1;
 
-jumpPower = 30;
-spd = 10;
-
+//physics
 velocity = [0,0];
 acceleration = [0,0];
 
-grounded = false;
+//for the pointer
+distanceList = ds_list_create();
