@@ -62,8 +62,11 @@ if(yaxis == 0){
 }
 
 //limit the velocity
-velocity[0] = clamp(velocity[0], -10*spd, 10*spd);
-velocity[1] = clamp(velocity[1], -10*spd, 10*spd);
+velMag = point_distance(0,0, velocity[0], velocity[1]);
+if(velMag > 10 * spd){
+	velocity[0] *= 10 * spd / velMag;
+	velocity[1] *= 10 * spd / velMag;
+}
 //add velocity to position
 x += velocity[0];
 y += velocity[1];
