@@ -1,4 +1,4 @@
-/// @description gravity gun pointer
+/// @description draw gravity gun, gravity gun pointer
 pointerX = x;
 pointerY = y;
 var pointerDir = -point_direction(x, y, mouse_x, mouse_y);
