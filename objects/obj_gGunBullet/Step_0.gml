@@ -1,8 +1,8 @@
 /// @description move forward, unless we hit a wall
 
 //horizontal collision checking
-if(place_meeting(x + xVel, y, obj_ground)){
-	while(!place_meeting(x + sign(xVel), y, obj_ground)){
+if(place_meeting(x + xVel, y, obj_wall)){
+	while(!place_meeting(x + sign(xVel), y, obj_wall)){
 		x += sign(xVel);
 	}
 	//at wall
@@ -10,8 +10,8 @@ if(place_meeting(x + xVel, y, obj_ground)){
 }
 
 //vertical collision checking
-if(place_meeting(x, y + yVel, obj_ground)){
-	while(!place_meeting(x, y + sign(yVel), obj_ground)){
+if(place_meeting(x, y + yVel, obj_wall)){
+	while(!place_meeting(x, y + sign(yVel), obj_wall)){
 		y += sign(yVel);
 	}
 	//at wall

@@ -10,7 +10,3 @@ acceleration = [0,0];
 
 //are the bullets attractive or repulsive
 attractiveBullets = true;
-
-//for handling bullets
-bulletList = ds_list_create();
-bulletCooldown = 0;

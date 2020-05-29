@@ -8,11 +8,7 @@ if(mouse_check_button_pressed(mb_right)){
 	attractiveBullets = !attractiveBullets
 }
 
-if(bulletCooldown > 0){
-	bulletCooldown--;
-}
-
-if(mouse_check_button_pressed(mb_left) && bulletCooldown == 0){
+if(mouse_check_button_pressed(mb_left)){
 	event_user(0);
 }
 
@@ -31,9 +27,9 @@ if(velMag <= 10 * spd){
 		velocity[0] *= 10 * spd / velMag;
 		velocity[1] *= 10 * spd / velMag;
 	}
-} else if(velMag > 20*spd){
-	velocity[0] *= 20 * spd / velMag;
-	velocity[1] *= 20 * spd / velMag;
+} else if(velMag > 30*spd){
+	velocity[0] *= 30 * spd / velMag;
+	velocity[1] *= 30 * spd / velMag;
 }
 
 //horizontal collision checking

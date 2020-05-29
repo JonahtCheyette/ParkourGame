@@ -1,2 +1,2 @@
 /// @description initialize stuff that's true among all bullets
-spd = 15;
+spd = 25;
