@@ -39,6 +39,22 @@
             }
         },
         {
+            "Key": "0bef58c9-ce89-4c2c-a0f9-90cffdd51505",
+            "Value": {
+                "id": "4f668d06-a591-4e67-91b9-a60b77fe072d",
+                "resourcePath": "objects\\obj_gGunBullet\\obj_gGunBullet.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "0fd8da4c-ee57-46d9-aafe-5fd7b54258de",
+            "Value": {
+                "id": "44615195-1be2-4334-b42b-f3d0b02c4b60",
+                "resourcePath": "views\\0fd8da4c-ee57-46d9-aafe-5fd7b54258de.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "1d2f9473-5d84-4964-a2df-59fb89270e3b",
             "Value": {
                 "id": "ce8c5c6c-0680-4e75-abc9-b88b3a56dedb",
@@ -135,6 +151,14 @@
             }
         },
         {
+            "Key": "60418a59-03a0-4d82-8fe5-cbb09938ca8c",
+            "Value": {
+                "id": "0c5ca928-5f8a-4b14-b762-d72787353762",
+                "resourcePath": "sprites\\spr_gGunBullet\\spr_gGunBullet.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "69a894ac-e41c-4a15-b61d-543aa8cfcb89",
             "Value": {
                 "id": "6d74d654-88a2-4663-96ff-a2ff032470c2",
@@ -188,6 +212,22 @@
                 "id": "0b29247e-7d57-43d3-918c-92160eff5cc3",
                 "resourcePath": "views\\a92084d2-5400-4f32-8d25-d0a45c663604.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "a95fdf06-d8c5-425c-8552-521e24d68e47",
+            "Value": {
+                "id": "f1c09085-f613-4649-82a2-9288b5ef371d",
+                "resourcePath": "objects\\obj_fullScreenHandler\\obj_fullScreenHandler.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "ba695fe5-d963-470b-8108-ee380d626bc5",
+            "Value": {
+                "id": "99998c5f-860e-44b9-a87c-971c607fc5f3",
+                "resourcePath": "objects\\obj_useGravity\\obj_useGravity.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -260,6 +300,14 @@
                 "id": "521e268d-ec47-4809-8509-c120e55482c9",
                 "resourcePath": "sprites\\spr_ground\\spr_ground.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "e2657ee9-6c85-4960-8450-170dee9b0166",
+            "Value": {
+                "id": "a98d27d1-aebc-4aef-8ac1-37713b336a98",
+                "resourcePath": "objects\\obj_gravityManipulator\\obj_gravityManipulator.yy",
+                "resourceType": "GMObject"
             }
         },
         {

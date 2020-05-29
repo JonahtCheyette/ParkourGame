@@ -4,6 +4,18 @@ getInput();
 acceleration = [0,0];
 
 //gravity gun
+if(mouse_check_button_pressed(mb_right)){
+	attractiveBullets = !attractiveBullets
+}
+
+if(bulletCooldown > 0){
+	bulletCooldown--;
+}
+
+if(mouse_check_button_pressed(mb_left) && bulletCooldown == 0){
+	event_user(0);
+}
+
 
 //basic movement
 acceleration[0] = spd * xaxis;

@@ -1,16 +1,26 @@
 /// @description draw gravity gun, gravity gun pointer
 pointerX = x;
 pointerY = y;
-var pointerDir = -point_direction(x, y, mouse_x, mouse_y);
+pointerDir = -point_direction(x, y, mouse_x, mouse_y);
 lowestDist = 100000000000;
 var wall = noone
 //NESW order
 var circleScale = 5;
 
+if(bulletCooldown == 0){
+	if(attractiveBullets){
+		var col = c_green;
+	} else {
+		var col = c_red;
+	}
+} else {
+	var col = c_yellow;
+}
+
 
 if(noone == collision_line(x, y, x + dcos(pointerDir) * 1000, y + dsin(pointerDir) * 1000, obj_ground, false, true)){
 	draw_set_alpha(0.5);
-	draw_set_color(c_red);
+	draw_set_color(col);
 	draw_line_width(x, y, x + dcos(pointerDir) * 1000, y + dsin(pointerDir) * 1000,3);
 	draw_set_alpha(1);
 } else {
@@ -33,7 +43,7 @@ if(noone == collision_line(x, y, x + dcos(pointerDir) * 1000, y + dsin(pointerDi
 		pointerY += dsin(pointerDir) * lowestDist;
 	}
 	draw_set_alpha(0.5);
-	draw_set_color(c_red);
+	draw_set_color(col);
 	draw_line_width(x, y, pointerX, pointerY,3);
 	draw_set_alpha(1);
 	//terribleness to draw the pointer
@@ -52,7 +62,7 @@ if(noone == collision_line(x, y, x + dcos(pointerDir) * 1000, y + dsin(pointerDi
 			ds_list_add(right, max(0, (pointerX + 99*0.5/circleScale) - (wall.x - wall.sprite_xoffset + wall.sprite_width)));
 			ds_list_add(down, max(0, (pointerY + 99*0.5/circleScale) - (wall.y - wall.sprite_yoffset + wall.sprite_height)));
 			ds_list_add(left, max(0,(wall.x - wall.sprite_xoffset) - (pointerX - 99*0.5/circleScale)));
-			draw_sprite_part_ext(spr_laserPointer, 0, left[|i] * circleScale, up[|i] * circleScale, 99 - circleScale * (left[|i] + right[|i]), 99 - circleScale * (up[|i] + down[|i]), pointerX + left[|i] - 99*0.5/circleScale, pointerY + up[|i] - 99*0.5/circleScale, 1/circleScale, 1/circleScale, c_white, 1);
+			draw_sprite_part_ext(spr_laserPointer, 0, left[|i] * circleScale, up[|i] * circleScale, 99 - circleScale * (left[|i] + right[|i]), 99 - circleScale * (up[|i] + down[|i]), pointerX + left[|i] - 99*0.5/circleScale, pointerY + up[|i] - 99*0.5/circleScale, 1/circleScale, 1/circleScale, col, 1);
 		}
 	}
 }
@@ -61,4 +71,4 @@ if(noone == collision_line(x, y, x + dcos(pointerDir) * 1000, y + dsin(pointerDi
 draw_self();
 
 //draw gravity gun
-draw_sprite_ext(spr_gravityGun, 0, x, y, 1, 1, -pointerDir, c_white, 1);
+draw_sprite_ext(spr_gravityGun, 0, x, y, 1, 1, -pointerDir, col, 1);
