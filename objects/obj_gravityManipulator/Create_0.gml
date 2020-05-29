@@ -1,5 +1,5 @@
 /// @description Initialize stuff for animation, death
-timer = 60;
+timer = 45;
 
 attractive = false;
 

@@ -5,8 +5,8 @@ if(!isDead){
 	} else {
 		var col = c_red;
 	}
-	draw_set_color(col);
-	draw_circle(x, y, baseRadius + rBoost, true);
+	var scale = (baseRadius + rBoost)/baseRadius;
+	draw_sprite_ext(sprite_index, image_index, x, y, scale, scale, 0, col, 1);
 
 	while(ds_list_size(particles) < 15){
 		if(attractive){

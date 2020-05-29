@@ -11,8 +11,7 @@
         "5f1b7882-5906-48ea-bf9a-a0be7d1254be",
         "481f1aa1-794d-4829-ab79-164d3232b737",
         "72da389d-d643-4814-8255-010ca3662252",
-        "9d096c14-eeed-43d7-b1ee-ae33a13e9caa",
-        "5ca7a7ca-82bf-4b22-a57e-0df092625414"
+        "9d096c14-eeed-43d7-b1ee-ae33a13e9caa"
     ],
     "IsDnD": false,
     "layers": [
@@ -34,8 +33,7 @@
 {"name": "inst_6C4D9D95","id": "481f1aa1-794d-4829-ab79-164d3232b737","colour": { "Value": 4294967295 },"creationCodeFile": "","creationCodeType": "","ignore": false,"imageIndex": 0,"imageSpeed": 1,"inheritCode": false,"inheritItemSettings": false,"IsDnD": false,"m_originalParentID": "00000000-0000-0000-0000-000000000000","m_serialiseFrozen": false,"modelName": "GMRInstance","name_with_no_file_rename": "inst_6C4D9D95","objId": "a3ff9bef-08b7-4fc6-8b74-d84fa39a5d71","properties": null,"rotation": 0,"scaleX": 5,"scaleY": 2.5,"mvc": "1.1","x": 810,"y": 941},
 {"name": "inst_4DE3D69F","id": "7d71523d-ef22-4add-afe6-c787fd94bc5e","colour": { "Value": 4294967295 },"creationCodeFile": "","creationCodeType": "","ignore": false,"imageIndex": 0,"imageSpeed": 1,"inheritCode": false,"inheritItemSettings": false,"IsDnD": false,"m_originalParentID": "00000000-0000-0000-0000-000000000000","m_serialiseFrozen": false,"modelName": "GMRInstance","name_with_no_file_rename": "inst_4DE3D69F","objId": "73cfdbef-448e-4632-abb9-9f1e7043202b","properties": null,"rotation": 0,"scaleX": 1,"scaleY": 1,"mvc": "1.1","x": 376,"y": 761},
 {"name": "inst_32C710A5","id": "72da389d-d643-4814-8255-010ca3662252","colour": { "Value": 4294967295 },"creationCodeFile": "","creationCodeType": "","ignore": false,"imageIndex": 0,"imageSpeed": 1,"inheritCode": false,"inheritItemSettings": false,"IsDnD": false,"m_originalParentID": "00000000-0000-0000-0000-000000000000","m_serialiseFrozen": false,"modelName": "GMRInstance","name_with_no_file_rename": "inst_32C710A5","objId": "76e3f4c3-beb1-4205-b4bd-4e9e4eaeebb5","properties": null,"rotation": 0,"scaleX": 1,"scaleY": 1,"mvc": "1.1","x": 479,"y": 267},
-{"name": "inst_49655B87","id": "9d096c14-eeed-43d7-b1ee-ae33a13e9caa","colour": { "Value": 4294967295 },"creationCodeFile": "","creationCodeType": "","ignore": false,"imageIndex": 0,"imageSpeed": 1,"inheritCode": false,"inheritItemSettings": false,"IsDnD": false,"m_originalParentID": "00000000-0000-0000-0000-000000000000","m_serialiseFrozen": false,"modelName": "GMRInstance","name_with_no_file_rename": "inst_49655B87","objId": "a95fdf06-d8c5-425c-8552-521e24d68e47","properties": null,"rotation": 0,"scaleX": 1,"scaleY": 1,"mvc": "1.1","x": 0,"y": 0},
-{"name": "inst_61FAF2B6","id": "5ca7a7ca-82bf-4b22-a57e-0df092625414","colour": { "Value": 4294967295 },"creationCodeFile": "","creationCodeType": "","ignore": false,"imageIndex": 0,"imageSpeed": 1,"inheritCode": false,"inheritItemSettings": false,"IsDnD": false,"m_originalParentID": "00000000-0000-0000-0000-000000000000","m_serialiseFrozen": false,"modelName": "GMRInstance","name_with_no_file_rename": "inst_61FAF2B6","objId": "e2657ee9-6c85-4960-8450-170dee9b0166","properties": null,"rotation": 0,"scaleX": 1,"scaleY": 1,"mvc": "1.1","x": 608,"y": 480}
+{"name": "inst_49655B87","id": "9d096c14-eeed-43d7-b1ee-ae33a13e9caa","colour": { "Value": 4294967295 },"creationCodeFile": "","creationCodeType": "","ignore": false,"imageIndex": 0,"imageSpeed": 1,"inheritCode": false,"inheritItemSettings": false,"IsDnD": false,"m_originalParentID": "00000000-0000-0000-0000-000000000000","m_serialiseFrozen": false,"modelName": "GMRInstance","name_with_no_file_rename": "inst_49655B87","objId": "a95fdf06-d8c5-425c-8552-521e24d68e47","properties": null,"rotation": 0,"scaleX": 1,"scaleY": 1,"mvc": "1.1","x": 0,"y": 0}
             ],
             "layers": [
 
@@ -79,7 +77,7 @@
             "id": "b76d5181-b9fc-4f45-8391-189316671d7d",
             "animationFPS": 15,
             "animationSpeedType": "0",
-            "colour": { "Value": 4278190080 },
+            "colour": { "Value": 4283190348 },
             "depth": 200,
             "grid_x": 32,
             "grid_y": 32,

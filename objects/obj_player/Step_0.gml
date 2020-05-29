@@ -21,9 +21,20 @@ if(mouse_check_button_pressed(mb_left) && bulletCooldown == 0){
 acceleration[0] = spd * xaxis;
 acceleration[1] = spd * yaxis;
 
-//add acceleration to velocity
-velocity[0] += acceleration[0];
-velocity[1] += acceleration[1];
+//add acceleration to velocity, limit velocity
+var velMag = point_distance(0,0, velocity[0], velocity[1]);
+if(velMag <= 10 * spd){
+	velocity[0] += acceleration[0];
+	velocity[1] += acceleration[1];
+	velMag = point_distance(0,0, velocity[0], velocity[1]);
+	if(velMag > 10){
+		velocity[0] *= 10 * spd / velMag;
+		velocity[1] *= 10 * spd / velMag;
+	}
+} else if(velMag > 20*spd){
+	velocity[0] *= 20 * spd / velMag;
+	velocity[1] *= 20 * spd / velMag;
+}
 
 //horizontal collision checking
 if(place_meeting(x + velocity[0], y, obj_ground)){
@@ -73,12 +84,6 @@ if(yaxis == 0){
 	velocity[1] *= 0.9;
 }
 
-//limit the velocity
-velMag = point_distance(0,0, velocity[0], velocity[1]);
-if(velMag > 10 * spd){
-	velocity[0] *= 10 * spd / velMag;
-	velocity[1] *= 10 * spd / velMag;
-}
 //add velocity to position
 x += velocity[0];
 y += velocity[1];

@@ -119,6 +119,14 @@
             }
         },
         {
+            "Key": "3d123039-b5e2-4f5f-a67f-4f208b018ac7",
+            "Value": {
+                "id": "e45c7acd-e5d7-4ab5-86b9-ea1361830c24",
+                "resourcePath": "sprites\\spr_gravManipulator\\spr_gravManipulator.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "424366b4-61c2-4faa-a1bd-c575a681dc10",
             "Value": {
                 "id": "7584338a-ce4e-427e-9a3d-b8f74c7cff8b",
