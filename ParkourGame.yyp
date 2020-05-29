@@ -79,6 +79,14 @@
             }
         },
         {
+            "Key": "293f3718-56bd-44f8-89b4-dba5fd1f3ca8",
+            "Value": {
+                "id": "4f8e47a5-fa3a-4a95-abc9-acc816cde230",
+                "resourcePath": "views\\293f3718-56bd-44f8-89b4-dba5fd1f3ca8.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "333ee0b0-14f7-48e5-9105-8e669fab56a1",
             "Value": {
                 "id": "fbf17230-140e-4d0b-80b3-1fd0ad4ba853",
@@ -91,6 +99,14 @@
             "Value": {
                 "id": "51b722da-10c5-4e82-b768-98a91e98de3f",
                 "resourcePath": "views\\337fa18a-4321-4d7d-80ef-14101ea1b538.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "346249a4-2dc2-439b-9bb0-8e257ddd73bb",
+            "Value": {
+                "id": "72054f0d-cd5f-4c83-9c6f-1975d365099f",
+                "resourcePath": "views\\346249a4-2dc2-439b-9bb0-8e257ddd73bb.yy",
                 "resourceType": "GMFolder"
             }
         },
@@ -116,6 +132,14 @@
                 "id": "13424c50-0702-41c1-b732-d842a0276d7e",
                 "resourcePath": "views\\4837b384-b4ea-42b9-9779-07ba2c613b30.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "498fc0d7-8de7-4571-b364-038b846bcbfb",
+            "Value": {
+                "id": "cbd7b174-d45d-40d1-9f89-7c0a61299f36",
+                "resourcePath": "objects\\obj_gravManipulatorParticle\\obj_gravManipulatorParticle.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -308,6 +332,14 @@
                 "id": "a98d27d1-aebc-4aef-8ac1-37713b336a98",
                 "resourcePath": "objects\\obj_gravityManipulator\\obj_gravityManipulator.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "e7c84199-8dee-406f-afd2-d32ebee7b28b",
+            "Value": {
+                "id": "54b24b5b-37da-4a90-beab-327c58c1094a",
+                "resourcePath": "sprites\\spr_GravManipulatorParticle\\spr_GravManipulatorParticle.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

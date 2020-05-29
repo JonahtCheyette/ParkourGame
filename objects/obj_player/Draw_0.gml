@@ -7,6 +7,7 @@ var wall = noone
 //NESW order
 var circleScale = 5;
 
+//need to decide on final colors
 if(bulletCooldown == 0){
 	if(attractiveBullets){
 		var col = c_green;
