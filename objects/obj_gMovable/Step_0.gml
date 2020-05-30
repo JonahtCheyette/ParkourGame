@@ -1,37 +1,13 @@
-/// @description Movement
-//getting input, resetting acceleration for this frame
-getInput();
-acceleration = [0,0];
+/// @description move around
 
-//gravity gun
-if(mouse_check_button_pressed(mb_right)){
-	attractiveBullets = !attractiveBullets
-}
-
-if(mouse_check_button_pressed(mb_left)){
-	event_user(0);
-}
-
-
-//basic movement
-acceleration[0] = spd * xaxis;
-acceleration[1] = spd * yaxis;
-
-//add acceleration to velocity, limit velocity
+velocity[0] *= 0.9;
+velocity[1] *= 0.9;
+//limit velocity
 var velMag = point_distance(0,0, velocity[0], velocity[1]);
-if(velMag <= 10 * spd){
-	velocity[0] += acceleration[0];
-	velocity[1] += acceleration[1];
-	velMag = point_distance(0,0, velocity[0], velocity[1]);
-	if(velMag > 10 * spd){
-		velocity[0] *= 10 * spd / velMag;
-		velocity[1] *= 10 * spd / velMag;
-	}
-} else if(velMag > 30*spd){
-	velocity[0] *= 30 * spd / velMag;
-	velocity[1] *= 30 * spd / velMag;
+if(velMag > 10){
+	velocity[0] *= 10 / velMag;
+	velocity[1] *= 10 / velMag;
 }
-
 //horizontal collision checking
 if(place_meeting(x + velocity[0], y, obj_wall)){
 	while(!place_meeting(x + sign(velocity[0]), y, obj_wall)){
@@ -70,14 +46,6 @@ if(y - sprite_yoffset + sprite_height + velocity[1] > room_height){
 		y += sign(velocity[1]);
 	}
 	velocity[1] = 0;
-}
-
-//slow down the player if there's no input
-if(xaxis == 0){
-	velocity[0] *= 0.9;
-}
-if(yaxis == 0){
-	velocity[1] *= 0.9;
 }
 
 //add velocity to position

@@ -2,7 +2,11 @@
 pointerX = x;
 pointerY = y;
 pointerDir = -point_direction(x, y, mouse_x, mouse_y);
-lowestDist = 100000000000;
+//for obj_ground
+gLowestDist = 100000000000;
+//for obj_gMovable
+mLowestDist = 100000000000;
+var lowestDist = 100000000000;
 var wall = noone
 //NESW order
 var circleScale = 5;
@@ -18,18 +22,35 @@ if(attractiveBullets){
 //my raymarching thing
 //check if we've hit a wall or if pointer is offscreen
 while(lowestDist >= 0.01 && !(pointerX <= camera_get_view_x(view_camera[0]) || pointerX >= camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0]) || pointerY <= camera_get_view_y(view_camera[0]) || pointerY >= camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0]))){
-	lowestDist = 100000000000;
+	//we have to do each wall type individually
+	gLowestDist = 100000000000;
 	for(var i = 0; i < instance_number(obj_ground); i++){
 		with(instance_find(obj_ground, i)){
 			if(instance_nearest(other.pointerX, other.pointerY, obj_ground) != noone){
-				if(distance_to_point(other.pointerX, other.pointerY) < other.lowestDist){
-					other.lowestDist = distance_to_point(other.pointerX, other.pointerY);
+				if(distance_to_point(other.pointerX, other.pointerY) < other.gLowestDist){
+					other.gLowestDist = distance_to_point(other.pointerX, other.pointerY);
 				}
 			} else {
-				other.lowestDist = 0;
+				other.gLowestDist = 0;
 			}
 		}
 	}
+	
+	mLowestDist = 100000000000;
+	for(var i = 0; i < instance_number(obj_gMovable); i++){
+		with(instance_find(obj_gMovable, i)){
+			if(instance_nearest(other.pointerX, other.pointerY, obj_gMovable) != noone){
+				if(distance_to_point(other.pointerX, other.pointerY) < other.mLowestDist){
+					other.mLowestDist = distance_to_point(other.pointerX, other.pointerY);
+				}
+			} else {
+				other.mLowestDist = 0;
+			}
+		}
+	}
+	
+	lowestDist = min(mLowestDist, gLowestDist);
+	
 	pointerX += dcos(pointerDir) * lowestDist;
 	pointerY += dsin(pointerDir) * lowestDist;
 }
@@ -38,11 +59,11 @@ draw_set_color(col);
 draw_line_width(x, y, pointerX, pointerY,3);
 draw_set_alpha(1);
 //terribleness to draw the pointer
-//essentially gets teh cuts of each wall the circle intersects, then draws a circle per each
+//essentially gets the cuts of each wall the circle intersects, then draws a circle per each
 //the idea itself ain't bad, but the math is horrendous
 if(!(pointerX <= camera_get_view_x(view_camera[0]) || pointerX >= camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0]) || pointerY <= camera_get_view_y(view_camera[0]) || pointerY >= camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0]))){
 	var _list = ds_list_create();
-	var _num = collision_circle_list(pointerX, pointerY, 99*0.5/circleScale, obj_ground, false, true, _list, false);
+	var _num = collision_circle_list(pointerX, pointerY, 99*0.5/circleScale, obj_wall, false, true, _list, false);
 	var up = ds_list_create();
 	var left = ds_list_create();
 	var right = ds_list_create();

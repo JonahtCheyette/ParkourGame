@@ -16,7 +16,6 @@ if(bullet != noone){
 	bullet.xVel = lengthdir_x(bullet.spd, bullet.rot);
 	bullet.yVel = lengthdir_y(bullet.spd, bullet.rot);
 	bullet.attractive = attractiveBullets;
-	bulletCooldown = 0;
 	for(var i = instance_number(obj_gravityManipulator) - 1; i >= 0; i--){
 		var _inst = instance_find(obj_gravityManipulator, i);
 		if(_inst.attractive == bullet.attractive){

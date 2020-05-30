@@ -159,6 +159,14 @@
             }
         },
         {
+            "Key": "5511cdad-68b9-41bd-b44a-5c240c6f53ff",
+            "Value": {
+                "id": "0cb7c5c6-1883-4f73-ad7f-f0d8cb07f776",
+                "resourcePath": "sprites\\spr_physicsObject\\spr_physicsObject.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "568c6d2b-b390-4e29-886d-966ef7cfd738",
             "Value": {
                 "id": "3a64e5ec-ac1d-4d57-8b49-8a08c8bed9bd",
@@ -295,14 +303,6 @@
             }
         },
         {
-            "Key": "c467c4db-b051-4191-b45a-fa143f9ffe4f",
-            "Value": {
-                "id": "470d2be8-2660-4da2-a1b8-66d8810813e6",
-                "resourcePath": "objects\\obj_bulletBlocker\\obj_bulletBlocker.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "c768d402-1d61-4d51-a0f6-ba81470f8aba",
             "Value": {
                 "id": "0bb56ea5-1db4-4bc8-8643-73c0374f3af0",
@@ -324,14 +324,6 @@
                 "id": "7bede0c1-3618-4cbd-b43c-4c8b02a6d2e7",
                 "resourcePath": "options\\windows\\options_windows.yy",
                 "resourceType": "GMWindowsOptions"
-            }
-        },
-        {
-            "Key": "d51d333d-107e-4717-bde3-f4a277f1003e",
-            "Value": {
-                "id": "4020e620-b356-47d1-8b9d-0bada7b9d5e7",
-                "resourcePath": "sprites\\spr_bulletBlocker\\spr_bulletBlocker.yy",
-                "resourceType": "GMSprite"
             }
         },
         {
@@ -380,6 +372,14 @@
                 "id": "54b24b5b-37da-4a90-beab-327c58c1094a",
                 "resourcePath": "sprites\\spr_GravManipulatorParticle\\spr_GravManipulatorParticle.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "f09cb054-8651-4491-8a7d-f29c0e08893f",
+            "Value": {
+                "id": "e2f24ca3-12dd-423d-b63e-c951573c5edf",
+                "resourcePath": "objects\\obj_gMovable\\obj_gMovable.yy",
+                "resourceType": "GMObject"
             }
         },
         {
