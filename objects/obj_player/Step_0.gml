@@ -12,6 +12,16 @@ if(mouse_check_button_pressed(mb_left)){
 	event_user(0);
 }
 
+if(yaxis == -1){
+	//not sure if this works the way I think it does
+	with(obj_levelEnd){
+		if(keys == 0 && place_meeting(x, y, obj_player)){
+			other.levelOver = true;
+			sprite_index = spr_levelEndAnimation;
+		}
+	}
+}
+
 
 //basic movement
 acceleration[0] = spd * xaxis;
@@ -81,5 +91,10 @@ if(yaxis == 0){
 }
 
 //add velocity to position
-x += velocity[0];
-y += velocity[1];
+if(!levelOver){
+	x += velocity[0];
+	y += velocity[1];
+} else {
+	//the level is over, stop moving
+	velocity = [0,0];
+}

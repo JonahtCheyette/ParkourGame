@@ -10,3 +10,6 @@ acceleration = [0,0];
 
 //are the bullets attractive or repulsive
 attractiveBullets = true;
+
+//are you invincible due to the end of the level
+levelOver = false;
