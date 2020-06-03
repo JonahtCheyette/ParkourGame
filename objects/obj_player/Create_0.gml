@@ -13,3 +13,6 @@ attractiveBullets = true;
 
 //are you invincible due to the end of the level
 levelOver = false;
+
+//health
+health = 3;
