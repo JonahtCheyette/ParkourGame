@@ -18,3 +18,7 @@ levelOver = false;
 health = 3;
 invincibleFrameCount = 0;
 invincibleFrameCountMax = 300;
+
+//start up the laser pointer
+pointerX = x;
+pointerY = y;

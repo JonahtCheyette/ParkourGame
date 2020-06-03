@@ -1,6 +1,4 @@
 /// @description draw gravity gun, gravity gun pointer
-pointerX = x;
-pointerY = y;
 pointerDir = -point_direction(x, y, mouse_x, mouse_y);
 lowestDist = 100000000000;
 var wall = noone
@@ -14,56 +12,59 @@ if(attractiveBullets){
 	var col = c_red;
 }
 
-
-//my raymarching thing
-//check if we've hit a wall or if pointer is offscreen
-while(lowestDist >= 0.01 && !(pointerX <= camera_get_view_x(view_camera[0]) || pointerX >= camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0]) || pointerY <= camera_get_view_y(view_camera[0]) || pointerY >= camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0]))){
-	//gonna try to optomise slightly
-	lowestDist = 100000000000;
-	if(instance_number(obj_ground) > 0){
-		if(instance_nearest(other.pointerX, other.pointerY, obj_ground) != noone){
-			for(var i = 0; i < instance_number(obj_ground); i++){
-				with(instance_find(obj_ground, i)){
-					if(distance_to_point(other.pointerX, other.pointerY) < other.lowestDist){
-						other.lowestDist = distance_to_point(other.pointerX, other.pointerY);
+if(!instance_exists(obj_pauseMenu)){
+	pointerX = x;
+	pointerY = y;
+	//my raymarching thing
+	//check if we've hit a wall or if pointer is offscreen
+	while(lowestDist >= 0.01 && !(pointerX <= camera_get_view_x(view_camera[0]) || pointerX >= camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0]) || pointerY <= camera_get_view_y(view_camera[0]) || pointerY >= camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0]))){
+		//gonna try to optomise slightly
+		lowestDist = 100000000000;
+		if(instance_number(obj_ground) > 0){
+			if(instance_nearest(other.pointerX, other.pointerY, obj_ground) != noone){
+				for(var i = 0; i < instance_number(obj_ground); i++){
+					with(instance_find(obj_ground, i)){
+						if(distance_to_point(other.pointerX, other.pointerY) < other.lowestDist){
+							other.lowestDist = distance_to_point(other.pointerX, other.pointerY);
+						}
 					}
 				}
+			} else {
+				other.lowestDist = 0;
 			}
-		} else {
-			other.lowestDist = 0;
 		}
-	}
-	
-	if(instance_number(obj_gMovable) > 0){
-		if(instance_nearest(other.pointerX, other.pointerY, obj_gMovable) != noone){
-			for(var i = 0; i < instance_number(obj_gMovable); i++){
-				with(instance_find(obj_gMovable, i)){
-					if(distance_to_point(other.pointerX, other.pointerY) < other.lowestDist){
-						other.lowestDist = distance_to_point(other.pointerX, other.pointerY);
+		
+		if(instance_number(obj_gMovable) > 0){
+			if(instance_nearest(other.pointerX, other.pointerY, obj_gMovable) != noone){
+				for(var i = 0; i < instance_number(obj_gMovable); i++){
+					with(instance_find(obj_gMovable, i)){
+						if(distance_to_point(other.pointerX, other.pointerY) < other.lowestDist){
+							other.lowestDist = distance_to_point(other.pointerX, other.pointerY);
+						}
 					}
 				}
+			} else {
+				other.lowestDist = 0;
 			}
-		} else {
-			other.lowestDist = 0;
 		}
-	}
-	
-	if(instance_number(obj_enemy) > 0){
-		if(instance_nearest(other.pointerX, other.pointerY, obj_enemy) != noone){
-			for(var i = 0; i < instance_number(obj_enemy); i++){
-				with(instance_find(obj_enemy, i)){
-					if(distance_to_point(other.pointerX, other.pointerY) < other.lowestDist){
-						other.lowestDist = distance_to_point(other.pointerX, other.pointerY);
+		
+		if(instance_number(obj_enemy) > 0){
+			if(instance_nearest(other.pointerX, other.pointerY, obj_enemy) != noone){
+				for(var i = 0; i < instance_number(obj_enemy); i++){
+					with(instance_find(obj_enemy, i)){
+						if(distance_to_point(other.pointerX, other.pointerY) < other.lowestDist){
+							other.lowestDist = distance_to_point(other.pointerX, other.pointerY);
+						}
 					}
 				}
+			} else {
+				other.lowestDist = 0;
 			}
-		} else {
-			other.lowestDist = 0;
 		}
+		
+		pointerX += dcos(pointerDir) * lowestDist;
+		pointerY += dsin(pointerDir) * lowestDist;
 	}
-	
-	pointerX += dcos(pointerDir) * lowestDist;
-	pointerY += dsin(pointerDir) * lowestDist;
 }
 draw_set_alpha(0.5);
 draw_set_color(col);
@@ -101,4 +102,4 @@ if(invincibleFrameCount > 0){
 }
 
 //draw gravity gun
-draw_sprite_ext(spr_gravityGun, 0, x, y, 1, 1, -pointerDir, col, 1);
+draw_sprite_ext(spr_gravityGun, 0, x, y, 1, 1, point_direction(x, y, pointerX, pointerY), col, 1);
