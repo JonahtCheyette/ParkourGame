@@ -14,5 +14,7 @@ attractiveBullets = true;
 //are you invincible due to the end of the level
 levelOver = false;
 
-//health
+//health and invincibility
 health = 3;
+invincibleFrameCount = 0;
+invincibleFrameCountMax = 300;

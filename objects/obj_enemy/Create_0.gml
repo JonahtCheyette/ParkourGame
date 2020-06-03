@@ -3,4 +3,4 @@ aim = point_direction(x, y, obj_player.x, obj_player.y);
 angle = aim;
 velocity = [0,0];
 firingTimer = 0;
-firingTimerMax = 20;
+firingTimerMax = 60;

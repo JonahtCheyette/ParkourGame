@@ -1,5 +1,4 @@
 /// @description move forward, unless we hit a wall
-
 var destroyed = false;
 
 //need to fix in order to not hit player
@@ -73,17 +72,6 @@ if(instance_place_list(x, y + yVel, obj_wall, _list, false) != 0){
 	}
 }
 
-
-/*
-if(place_meeting(x, y + yVel, obj_wall)){
-	while(!place_meeting(x, y + sign(yVel), obj_wall)){
-		y += sign(yVel);
-	}
-	//at wall
-	instance_destroy(id);
-}
-
-*/
 if(destroyed){
 	instance_destroy(id);
 }

@@ -98,3 +98,7 @@ if(!levelOver){
 	//the level is over, stop moving
 	velocity = [0,0];
 }
+
+if(invincibleFrameCount > 0){
+	invincibleFrameCount --;
+}
