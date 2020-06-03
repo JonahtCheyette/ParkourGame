@@ -8,7 +8,7 @@ gLowestDist = 100000000000;
 mLowestDist = 100000000000;
 //for obj_enemy
 eLowestDist = 100000000000;
-var lowestDist = 100000000000;
+lowestDist = 100000000000;
 var wall = noone
 //NESW order
 var circleScale = 5;
@@ -24,6 +24,45 @@ if(attractiveBullets){
 //my raymarching thing
 //check if we've hit a wall or if pointer is offscreen
 while(lowestDist >= 0.01 && !(pointerX <= camera_get_view_x(view_camera[0]) || pointerX >= camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0]) || pointerY <= camera_get_view_y(view_camera[0]) || pointerY >= camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0]))){
+	//gonna try to optomise slightly
+	lowestDist = 100000000000;
+	if(instance_nearest(other.pointerX, other.pointerY, obj_ground) != noone){
+		for(var i = 0; i < instance_number(obj_ground); i++){
+			with(instance_find(obj_ground, i)){
+				if(distance_to_point(other.pointerX, other.pointerY) < other.lowestDist){
+					other.lowestDist = distance_to_point(other.pointerX, other.pointerY);
+				}
+			}
+		}
+	} else {
+		other.lowestDist = 0;
+	}
+	
+	if(instance_nearest(other.pointerX, other.pointerY, obj_gMovable) != noone){
+		for(var i = 0; i < instance_number(obj_gMovable); i++){
+			with(instance_find(obj_gMovable, i)){
+				if(distance_to_point(other.pointerX, other.pointerY) < other.lowestDist){
+					other.lowestDist = distance_to_point(other.pointerX, other.pointerY);
+				}
+			}
+		}
+	} else {
+		other.lowestDist = 0;
+	}
+	
+	if(instance_nearest(other.pointerX, other.pointerY, obj_enemy) != noone){
+		for(var i = 0; i < instance_number(obj_enemy); i++){
+			with(instance_find(obj_enemy, i)){
+				if(distance_to_point(other.pointerX, other.pointerY) < other.lowestDist){
+					other.lowestDist = distance_to_point(other.pointerX, other.pointerY);
+				}
+			}
+		}
+	} else {
+		other.lowestDist = 0;
+	}
+	
+	/*
 	//we have to do each wall type individually
 	gLowestDist = 100000000000;
 	for(var i = 0; i < instance_number(obj_ground); i++){
@@ -63,8 +102,8 @@ while(lowestDist >= 0.01 && !(pointerX <= camera_get_view_x(view_camera[0]) || p
 			}
 		}
 	}
-	
 	lowestDist = min(mLowestDist, gLowestDist, eLowestDist);
+	*/
 	
 	pointerX += dcos(pointerDir) * lowestDist;
 	pointerY += dsin(pointerDir) * lowestDist;
