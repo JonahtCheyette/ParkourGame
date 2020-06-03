@@ -59,7 +59,7 @@ if(ds_list_size(_list) == 1 && _list[|0].object_index == obj_player){
 	angle -= angle_difference(angle, aim) / 4;
 	if(firingTimer == 0){
 		//fire
-		firingTimer = 15;
+		firingTimer = firingTimerMax;
 	}
 }
 
