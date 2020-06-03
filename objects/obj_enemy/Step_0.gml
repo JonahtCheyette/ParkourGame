@@ -3,21 +3,19 @@ velocity[0] *= 0.9;
 velocity[1] *= 0.9;
 //limit velocity
 var velMag = point_distance(0,0, velocity[0], velocity[1]);
+var hitAWall = false
 if(velMag > 10){
 	velocity[0] *= 10 / velMag;
 	velocity[1] *= 10 / velMag;
 }
-velMag = point_distance(0,0, velocity[0], velocity[1]);
+
 //horizontal collision checking
 if(place_meeting(x + velocity[0], y, obj_wall)){
 	while(!place_meeting(x + sign(velocity[0]), y, obj_wall)){
 		x += sign(velocity[0]);
 	}
 	velocity[0] = 0;
-	//destroy yourself if you slam into a wall too hard
-	if (velMag > 9){
-		instance_destroy(id);
-	}
+	hitAWall = true;
 }
 if(x - sprite_xoffset + velocity[0] < 0){
 	while(x - sprite_xoffset + sign(velocity[0]) >= 0){
@@ -38,10 +36,7 @@ if(place_meeting(x, y + velocity[1], obj_wall)){
 		y += sign(velocity[1]);
 	}
 	velocity[1] = 0;
-	//destroy yourself if you slam into a wall too hard
-	if (velMag > 9){
-		instance_destroy(id);
-	}
+	hitAWall = true;
 }
 if(y - sprite_yoffset + velocity[1] < 0){
 	while(y - sprite_yoffset + sign(velocity[1]) >= 0){
@@ -59,6 +54,14 @@ if(y - sprite_yoffset + sprite_height + velocity[1] > room_height){
 //add velocity to position
 x += velocity[0];
 y += velocity[1];
+
+if(hitAWall){
+	//destroy yourself if you slam into a wall too hard
+	velMag = point_distance(xprevious, yprevious, x, y);
+	if (velMag > 9){
+		instance_destroy(id);
+	}
+}
 
 //handle firing the gun
 var _list = ds_list_create();
