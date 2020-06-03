@@ -2,12 +2,6 @@
 pointerX = x;
 pointerY = y;
 pointerDir = -point_direction(x, y, mouse_x, mouse_y);
-//for obj_ground
-gLowestDist = 100000000000;
-//for obj_gMovable
-mLowestDist = 100000000000;
-//for obj_enemy
-eLowestDist = 100000000000;
 lowestDist = 100000000000;
 var wall = noone
 //NESW order
@@ -61,49 +55,6 @@ while(lowestDist >= 0.01 && !(pointerX <= camera_get_view_x(view_camera[0]) || p
 	} else {
 		other.lowestDist = 0;
 	}
-	
-	/*
-	//we have to do each wall type individually
-	gLowestDist = 100000000000;
-	for(var i = 0; i < instance_number(obj_ground); i++){
-		with(instance_find(obj_ground, i)){
-			if(instance_nearest(other.pointerX, other.pointerY, obj_ground) != noone){
-				if(distance_to_point(other.pointerX, other.pointerY) < other.gLowestDist){
-					other.gLowestDist = distance_to_point(other.pointerX, other.pointerY);
-				}
-			} else {
-				other.gLowestDist = 0;
-			}
-		}
-	}
-	
-	mLowestDist = 100000000000;
-	for(var i = 0; i < instance_number(obj_gMovable); i++){
-		with(instance_find(obj_gMovable, i)){
-			if(instance_nearest(other.pointerX, other.pointerY, obj_gMovable) != noone){
-				if(distance_to_point(other.pointerX, other.pointerY) < other.mLowestDist){
-					other.mLowestDist = distance_to_point(other.pointerX, other.pointerY);
-				}
-			} else {
-				other.mLowestDist = 0;
-			}
-		}
-	}
-	
-	eLowestDist = 100000000000;
-	for(var i = 0; i < instance_number(obj_enemy); i++){
-		with(instance_find(obj_enemy, i)){
-			if(instance_nearest(other.pointerX, other.pointerY, obj_enemy) != noone){
-				if(distance_to_point(other.pointerX, other.pointerY) < other.eLowestDist){
-					other.eLowestDist = distance_to_point(other.pointerX, other.pointerY);
-				}
-			} else {
-				other.eLowestDist = 0;
-			}
-		}
-	}
-	lowestDist = min(mLowestDist, gLowestDist, eLowestDist);
-	*/
 	
 	pointerX += dcos(pointerDir) * lowestDist;
 	pointerY += dsin(pointerDir) * lowestDist;
