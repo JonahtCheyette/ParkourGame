@@ -1,44 +1,34 @@
 {
-    "id": "a95fdf06-d8c5-425c-8552-521e24d68e47",
+    "id": "da31497a-7a06-4d2b-a7b6-32a01a67d6fb",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_fullScreenHandler",
+    "name": "obj_goBackToMainMenu",
     "eventList": [
         {
-            "id": "7ea59e15-edbc-4e01-a621-dde1cf8d5f37",
+            "id": "5f5fd2ca-ed4b-4fc4-8b6e-89297430892d",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
-            "eventtype": 0,
-            "m_owner": "a95fdf06-d8c5-425c-8552-521e24d68e47"
+            "eventtype": 8,
+            "m_owner": "da31497a-7a06-4d2b-a7b6-32a01a67d6fb"
         },
         {
-            "id": "2c6462b1-60d5-4f81-bf2f-64347b0c96ac",
+            "id": "7e2a3c3c-d601-456e-b8e5-2204efee98db",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 27,
-            "eventtype": 9,
-            "m_owner": "a95fdf06-d8c5-425c-8552-521e24d68e47"
-        },
-        {
-            "id": "3aada3b2-99c1-4e4c-a17d-c31f7b81dc26",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 80,
-            "eventtype": 9,
-            "m_owner": "a95fdf06-d8c5-425c-8552-521e24d68e47"
+            "enumb": 0,
+            "eventtype": 6,
+            "m_owner": "da31497a-7a06-4d2b-a7b6-32a01a67d6fb"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
     "parentObjectId": "00000000-0000-0000-0000-000000000000",
-    "persistent": true,
+    "persistent": false,
     "physicsAngularDamping": 0.1,
     "physicsDensity": 0.5,
     "physicsFriction": 0.2,
@@ -53,6 +43,6 @@
     "physicsStartAwake": true,
     "properties": null,
     "solid": false,
-    "spriteId": "00000000-0000-0000-0000-000000000000",
-    "visible": false
+    "spriteId": "e51ed722-f460-4fd3-a34e-c8931cd01d63",
+    "visible": true
 }

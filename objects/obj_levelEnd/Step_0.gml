@@ -5,5 +5,6 @@ if(!instance_exists(obj_pauseMenu)){
 			levelOver = false;
 		}
 		room = rm;
+		
 	}
 }
