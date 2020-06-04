@@ -35,9 +35,7 @@ if(mouse_check_button_released(mb_left)){
 			room = rm_mainMenu;
 		} else if (mouse_y >= camera_get_view_y(view_camera[0]) + 828 && mouse_y <= camera_get_view_y(view_camera[0]) + 908 && file_exists("save.ini")){
 			//load
-			ini_open("save.ini");
-			room = ini_read_real("Location","Room",0);
-			ini_close();
+			file_delete("save.ini");
 			instance_destroy(id);
 		} else if (mouse_y >= camera_get_view_y(view_camera[0]) + 928 && mouse_y <= camera_get_view_y(view_camera[0]) + 1008){
 			//exit menu

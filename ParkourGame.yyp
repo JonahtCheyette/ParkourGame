@@ -135,6 +135,14 @@
             }
         },
         {
+            "Key": "2d437b67-9b75-406d-bde7-63791c02ebe8",
+            "Value": {
+                "id": "b52ad817-f1be-4c69-9c66-05b0b3206832",
+                "resourcePath": "objects\\obj_loadButton\\obj_loadButton.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "333ee0b0-14f7-48e5-9105-8e669fab56a1",
             "Value": {
                 "id": "fbf17230-140e-4d0b-80b3-1fd0ad4ba853",

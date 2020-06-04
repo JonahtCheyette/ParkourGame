@@ -24,5 +24,5 @@ draw_set_font(fnt_noAA);
 draw_text_transformed(camera_get_view_x(view_camera[0]) + 1024, camera_get_view_y(view_camera[0]) + 568, "PAUSE", 4, 4, 0);
 draw_text_transformed(camera_get_view_x(view_camera[0]) + 1024, camera_get_view_y(view_camera[0]) + 668, "SAVE & QUIT", 3, 3, 0);
 draw_text_transformed(camera_get_view_x(view_camera[0]) + 1024, camera_get_view_y(view_camera[0]) + 768, "QUIT TO MENU", 3, 3, 0);
-draw_text_transformed(camera_get_view_x(view_camera[0]) + 1024, camera_get_view_y(view_camera[0]) + 868, "LOAD", 3, 3, 0);
+draw_text_transformed(camera_get_view_x(view_camera[0]) + 1024, camera_get_view_y(view_camera[0]) + 868, "DELETE SAVE", 3, 3, 0);
 draw_text_transformed(camera_get_view_x(view_camera[0]) + 1024, camera_get_view_y(view_camera[0]) + 968, "EXIT MENU", 3, 3, 0);
