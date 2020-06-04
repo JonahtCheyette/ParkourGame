@@ -44,8 +44,8 @@ if(!instance_exists(obj_pauseMenu)){
 	}
 	
 	//horizontal collision checking
-	if(place_meeting(x + velocity[0], y, obj_wall)){
-		while(!place_meeting(x + sign(velocity[0]), y, obj_wall)){
+	if(place_meeting(x + velocity[0], y, obj_needed)){
+		while(!place_meeting(x + sign(velocity[0]), y, obj_needed)){
 			x += sign(velocity[0]);
 		}
 		velocity[0] = 0;
@@ -64,7 +64,7 @@ if(!instance_exists(obj_pauseMenu)){
 	}
 	
 	//vertical collision checking
-	if(place_meeting(x, y + velocity[1], obj_wall)){
+	if(place_meeting(x, y + velocity[1], obj_needed)){
 		while(!place_meeting(x, y + sign(velocity[1]), obj_wall)){
 			y += sign(velocity[1]);
 		}
@@ -102,5 +102,9 @@ if(!instance_exists(obj_pauseMenu)){
 	
 	if(invincibleFrameCount > 0){
 		invincibleFrameCount --;
+	}
+	
+	if(health == 0){
+		room = rm_end;
 	}
 }
